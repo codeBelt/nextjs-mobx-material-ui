@@ -4,6 +4,10 @@ import { AppProps } from 'next/app';
 import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { theme } from '../components/ui/theme';
+import { useStaticRendering } from 'mobx-react-lite';
+
+// eslint-disable-next-line react-hooks/rules-of-hooks
+useStaticRendering(typeof window === 'undefined'); // Not a react-hook
 
 const NextApp = (props: AppProps) => {
   const { Component, pageProps } = props;
